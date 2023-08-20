@@ -1,0 +1,163 @@
+/* General Style */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+
+:root {
+  --main-color: #1e202b;
+  --secondary-color: #009ad8;
+  --btn-hover-color: #0c8abc;
+  --bg-main-color: #323544;
+  --bg-secondary-color: #262936;
+  --fade-color: #bfc1c8;
+  --white-color: #FFF;
+}
+
+.bg-main-color {
+  background-color: var(--bg-main-color);
+}
+
+.bg-secondary-color
+{
+    background-color: var(--main-color);
+}
+
+.fs-small {
+  font-size: 0.9rem;
+}
+
+.fs-status {
+  font-size: 1.1rem;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--main-color);
+}
+
+.navbar-brand .logo-title {
+    color: var(--white-color);
+}
+
+.navbar-brand .logo-title h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.navbar-brand .logo-title small {
+    font-size: 0.7rem;
+    font-weight: lighter;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: var(--white-color);
+    font-size: 0.8rem;
+    padding: 5px 15px;
+}
+
+.navbar-nav .nav-item .nav-link.active,
+.navbar-nav .nav-item .nav-link:hover {
+  border: 2px solid var(--secondary-color);
+  border-radius: 30px;
+  color: var(--secondary-color);
+}
+
+.navbar-toggler-icon {
+  
+}
+
+
+.header {
+    min-height: 400px;
+    background-image: url(./../images/banner.png);
+    background-repeat: no-repeat;
+    padding-top: 20px;
+}
+
+.header .hero-search,
+.footer .footer-contact {
+  position: relative;
+}
+
+#searchInput  {
+  background-color: var(--main-color);
+  border: none;
+  color: var(--white-color);
+  padding: 20px;
+}
+
+
+#searchInput::placeholder {
+  color: var(--fade-color);
+  opacity: 0.7;
+}
+
+.search-btn, 
+.contact-btn {
+  position: absolute;
+  background-color: var(--secondary-color);
+  padding: 15px 40px;
+  border: none;
+}
+
+
+.search-btn{
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+}
+
+
+.btn:hover {
+    background-color: var(--btn-hover-color);
+    border-color: var(--btn-hover-color);
+}
+
+.cards {
+  color: var(--fade-color);
+}
+
+
+.cards .card-header {
+  color: var(--fade-color);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.card-one {
+  border: 1px solid #333;
+}
+
+
+.footer {
+  background-color: var(--bg-secondary-color);
+}
+
+.footer .contact-btn {
+  top: 52.5px;
+  right: 15px;
+}
+
+.footer a {
+  text-decoration: none;
+  width: 48px;
+  height: 48px;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+
+.footer a:hover {
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+}
+
+.footer .footer-text {
+  color: var(--fade-color);
+}

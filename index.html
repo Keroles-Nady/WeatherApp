@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Attach fontawesome to the project -->
+    <!-- Online method using CDNJS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Attach bootstrap to the project -->
+    <!-- Online method using CDNJS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Weather App Project</title>
+  </head>
+  <body>
+    <!-- Start NavBar Section -->
+    <nav class="navbar py-5 navbar-expand-lg">
+      <div class="container">
+        <a
+          class="navbar-brand d-flex justify-content-center align-items-center gap-3"
+          href="#"
+        >
+          <div class="logo-img w-25">
+            <img
+              src="./images/logo@2x.png"
+              alt="weather-app logo"
+              class="w-100"
+            />
+          </div>
+          <div class="logo-title d-flex flex-column">
+            <h3 class="mb-1">Weather</h3>
+            <small class="lead">tagline goes here</small>
+          </div>
+        </a>
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa-solid fa-bars text-white"></i>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Live Cameras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Photos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Start Header Section -->
+    <header id="header" class="header">
+      <div class="container">
+        <div class="hero-search w-75 mx-auto">
+          <input
+          type="text"
+          id="searchInput"
+          placeholder="Find your location..."
+          class="form-control mx-auto my-5 rounded-5"
+        />
+        <button class="btn btn-primary search-btn d-block rounded-5">
+          Find
+        </button>
+        </div>
+
+    <!-- Start Cards Section -->
+    <section class="cards py-5">
+      <div class="row g-0 d-flex w-100">
+        <!-- Today -->
+        <div class="current-weather bg-main-color col-md-4 rounded-3 p-0">
+          <div class="card-header px-3 py-3 rounded-2 d-flex justify-content-between">
+            <h4 id="current-day-name" class="current-day-name fs-small m-0"></h4>
+            <h4 id="current-day-date" class="day-date fs-small m-0"></h4>
+          </div>
+          <div class="card-content p-4">
+            <h3 class="location mb-4"></h3>
+            <div class="degree-info d-flex justify-content-between align-items-center w-75 mb-5">
+              <h1 class="degree"><span id="current-day-temp"></span> <sup>o</sup> C</h1>
+              <div class="status-img">
+                <img id="current-day-img" src="./images/icon-wind.png" class="w-100" >
+              </div>
+            </div>
+            <h4 id="current-day-status" class="status mb-4 fs-status"></h4>
+            <div class="more-info d-flex justify-content-between align-items-center">
+              <span>
+                <img src="./images/icon-umberella.png">
+                <span id="current-day-humidity">-</span>%
+              </span>
+              <span>
+                <img src="./images/icon-wind.png">
+                <span id="current-day-wind">-</span> km/h
+              </span>
+              <span>
+                <img src="./images/icon-compass.png"> 
+                <span id="current-day-windDir">-</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tomorrow -->
+        <div class="weather col-md-4 rounded-3 bg-secondary-color p-0">
+          <div class="card-header px-3 py-3 rounded-2 text-center">
+            <h4 class="day-name fs-small m-0"></h4>
+          </div>
+          <div class="card-content text-center p-4">
+            <img src="" class="img-fluid mb-4 weather-status-img">
+            <h2><span class="max-degree"></span><sup>o</sup> C</h2>
+            <h4 class="fw-lighter mb-5"><span class="min-degree"></span><sup>o</sup> C</h4>
+            <h5 class="weather-status fs-status"></h5>
+          </div>
+        </div>
+
+        <!-- After Tomorrow -->
+        <div class="weather col-md-4 rounded-3 p-0 bg-main-color">
+          <div class="card-header px-3 py-3 rounded-2 text-center">
+            <h4 class="day-name fs-small m-0"></h4>
+          </div>
+          <div class="card-content text-center p-4">
+            <img src="" class="img-fluid mb-4 weather-status-img">
+            <h2><span class="max-degree"></span><sup>o</sup> C</h2>
+            <h4 class="fw-lighter mb-5"><span class="min-degree"></span><sup>o</sup> C</h4>
+            <h5 class="weather-status fs-status"></h5>
+          </div>
+        </div>
+      </div>
+      
+      
+    </section>
+
+      </div>
+    </header>
+
+    <!-- Start Footer Section -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-contact col-md-7">
+            <input
+            type="text"
+            id="searchInput"
+            placeholder="Enter your email to subscribe..."
+            class="form-control mx-auto my-5 rounded-5"
+          />
+          <button class="btn btn-primary contact-btn rounded-5">
+            Subscribe
+          </button>
+          </div>
+          <div class="social-icons col-md-5 d-flex justify-content-center align-items-center gap-2 text-center">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+        </div>
+        <p class="footer-text pb-5 ps-3">Copyright 2023 Route Academy. Designed by Keroles_N. All rights reserved</p>
+      </div>
+    </footer>
+
+
+    <!-- Attach bootstrap helpers (Popper & JQuery) to the project -->
+    <!-- Using CDNJS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+      integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./JS/index.js"></script>
+  </body>
+</html>
